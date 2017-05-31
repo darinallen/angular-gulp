@@ -1,0 +1,22 @@
+{
+  "name": "angular-gulp",
+  "description": "",
+  "main": "server/index.js",
+  "authors": "",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.6.4",
+    "underscore": "^1.8.3",
+    "angular-ui-router": "^1.0.3",
+    "angular-animate": "^1.6.4",
+    "foundation": "^5.5.3"
+  },
+  "overrides": {
+    "foundation": {
+      "main": "js/foundation.js"
+    }
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.6.4"
+  }
+}
