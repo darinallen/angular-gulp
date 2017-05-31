@@ -26,7 +26,6 @@ var paths = {
 
 var pipes = {};
 
-
 // Correctly order vendor scripts
 pipes.orderedVendorScripts = function() {
     return plugins.order(['jquery.js', 'angular.js']);
@@ -213,11 +212,11 @@ gulp.task('clean-dev', function() {
 
 // Removes all compiled production files
 gulp.task('clean-prod', function() {
-    var deferred = Q.defer();
-    del(paths.distProd, function() {
-        deferred.resolve();
-    });
-    return deferred.promise;
+  return del(paths.distProd).then(function(paths) {
+    if (paths && paths != '') {
+      console.log('[gulp][clean] Deleted files/folders:\n', paths.join('\n'));
+    }
+  });
 });
 
 // Checks html source files for syntax errors
